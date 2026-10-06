@@ -145,7 +145,7 @@ const observador = new IntersectionObserver((entries) => {
 });
 
 // Aplicar observador a elementos, escalonando el retraso según su posición dentro de cada grupo
-const gruposAnimados = document.querySelectorAll('.resumen-grid, .competencias-grid, .proyectos-grid, .skills-list');
+const gruposAnimados = document.querySelectorAll('.destacados, .proyectos-grid, .herramientas-grid, .trayectoria-lista');
 
 gruposAnimados.forEach(grupo => {
     Array.from(grupo.children).forEach((el, indice) => {
@@ -159,6 +159,7 @@ gruposAnimados.forEach(grupo => {
 // ==================== CONTADOR DE ESTADÍSTICAS ====================
 
 function contarHasta(elemento, valor) {
+    const sufijo = elemento.textContent.replace(/[\d\s]/g, '');
     let contador = 0;
     const incremento = valor / 50;
     const intervalo = setInterval(() => {
@@ -167,7 +168,7 @@ function contarHasta(elemento, valor) {
             contador = valor;
             clearInterval(intervalo);
         }
-        elemento.textContent = Math.floor(contador) + (elemento.textContent.includes('+') ? '+' : '%');
+        elemento.textContent = Math.floor(contador) + sufijo;
     }, 30);
 }
 

@@ -203,9 +203,9 @@ body {
     flex-wrap: wrap;
 }
 
-/* Tarjeta de conciliación */
+/* Índice de proyectos */
 
-.conciliacion {
+.indice {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 14px;
@@ -216,23 +216,23 @@ body {
     animation: slideUp 0.8s ease 0.15s backwards;
 }
 
-.conciliacion-titulo {
+.indice-titulo {
     color: var(--text-primary);
 }
 
-.conciliacion-ruta {
+.indice-ruta {
     color: var(--text-secondary);
     margin: 0.4rem 0 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px dashed var(--border-color);
 }
 
-.conciliacion table {
+.indice table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.conciliacion th {
+.indice th {
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 1.5px;
@@ -242,24 +242,29 @@ body {
     padding-bottom: 0.75rem;
 }
 
-.conciliacion td {
-    padding: 0.7rem 0;
+.indice td {
+    padding: 0.55rem 0;
     border-top: 1px solid var(--border-color);
     color: var(--text-heading);
 }
 
-.conciliacion th:last-child,
-.conciliacion td:last-child {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
+.indice th:not(:last-child),
+.indice td:not(:last-child) {
+    padding-right: 1rem;
 }
 
-.conciliacion td.ok {
+.indice th:last-child,
+.indice td:last-child {
+    text-align: right;
+    color: var(--text-secondary);
+}
+
+.indice td.ok {
     color: var(--accent-green);
     font-weight: 600;
 }
 
-.conciliacion-nota {
+.indice-nota {
     margin-top: 1rem;
     font-size: 0.75rem;
     line-height: 1.6;
@@ -399,114 +404,6 @@ body {
     border-bottom: 1px solid rgba(92, 194, 179, 0.1);
 }
 
-/* Proyectos destacados */
-
-.destacados {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.destacado-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 240px;
-    gap: 2.5rem;
-    padding: 2.25rem;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    transition: var(--transition);
-}
-
-.destacado-card:hover {
-    border-color: rgba(92, 194, 179, 0.5);
-    box-shadow: var(--glow-primary);
-}
-
-.etiqueta {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--accent-secondary);
-    background: rgba(92, 194, 179, 0.12);
-    border-radius: 999px;
-    padding: 0.25rem 0.8rem;
-    margin-bottom: 1rem;
-}
-
-.destacado-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--text-heading);
-    margin-bottom: 0.5rem;
-}
-
-.destacado-resumen {
-    color: var(--text-secondary);
-    margin-bottom: 1.25rem;
-}
-
-.proyecto-features {
-    list-style: none;
-    margin-bottom: 1.5rem;
-}
-
-.proyecto-features li {
-    padding: 0.4rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--text-primary);
-    font-size: 0.95rem;
-}
-
-.proyecto-features li::before {
-    content: '•';
-    position: absolute;
-    left: 0.2rem;
-    color: var(--accent-primary);
-    font-weight: bold;
-}
-
-.destacado-metricas {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    padding-left: 2rem;
-    border-left: 1px solid var(--border-color);
-}
-
-.metrica strong {
-    font-family: var(--font-display);
-    display: block;
-    font-size: 1.7rem;
-    font-weight: 800;
-    line-height: 1.2;
-    color: var(--accent-orange);
-    font-variant-numeric: tabular-nums;
-}
-
-.metrica span {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
-.destacado-link {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: var(--accent-primary);
-    text-underline-offset: 4px;
-    transition: var(--transition);
-}
-
-.destacado-link:hover {
-    color: var(--accent-secondary);
-}
-
 /* Filtros */
 
 .filtros {
@@ -540,7 +437,7 @@ body {
 
 .proyectos-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
@@ -583,9 +480,44 @@ body {
 
 .proyecto-card > p {
     color: var(--text-secondary);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.proyecto-features {
+    list-style: none;
     flex-grow: 1;
     margin-bottom: 1.25rem;
+}
+
+.proyecto-features li {
+    padding: 0.3rem 0;
+    padding-left: 1.4rem;
+    position: relative;
+    color: var(--text-primary);
+    font-size: 0.92rem;
+}
+
+.proyecto-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0.2rem;
+    color: var(--accent-primary);
+    font-weight: bold;
+}
+
+.proyecto-link {
+    align-self: flex-start;
+    margin-top: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    text-underline-offset: 4px;
+    transition: var(--transition);
+}
+
+.proyecto-link:hover {
+    color: var(--accent-secondary);
 }
 
 .proyecto-tech {
@@ -779,7 +711,7 @@ body {
     }
 
     .hero-content,
-    .conciliacion {
+    .indice {
         animation: none;
     }
 }
@@ -795,15 +727,10 @@ body {
         gap: 2.5rem;
     }
 
-    .proyectos-grid,
     .herramientas-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .destacado-card {
-        grid-template-columns: minmax(0, 1fr) 200px;
-        gap: 2rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -900,34 +827,6 @@ body {
         font-size: 1.9rem;
     }
 
-    .destacado-card {
-        grid-template-columns: 1fr;
-        padding: 1.5rem;
-        gap: 1.5rem;
-    }
-
-    .destacado-card h3 {
-        font-size: 1.5rem;
-    }
-
-    .destacado-metricas {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.25rem;
-        padding-left: 0;
-        padding-top: 1.5rem;
-        border-left: none;
-        border-top: 1px solid var(--border-color);
-    }
-
-    .destacado-link {
-        grid-column: 1 / -1;
-    }
-
-    .metrica strong {
-        font-size: 1.4rem;
-    }
-
     .proyectos-grid,
     .herramientas-grid {
         grid-template-columns: 1fr;
@@ -972,8 +871,13 @@ body {
         justify-content: center;
     }
 
-    .conciliacion {
+    .indice {
         padding: 1.25rem;
         font-size: 0.78rem;
+    }
+
+    .indice th:last-child,
+    .indice td:last-child {
+        display: none;
     }
 }

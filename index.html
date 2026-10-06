@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
     <!-- Navbar -->
@@ -51,28 +51,32 @@
                     </div>
                 </div>
 
-                <!-- Conciliación de la migración Darjam -->
-                <div class="conciliacion">
-                    <p class="conciliacion-titulo">darjam · conciliación de migración</p>
-                    <p class="conciliacion-ruta">Excel → MySQL</p>
+                <!-- Índice de proyectos -->
+                <div class="indice">
+                    <p class="indice-titulo">portafolio · índice de proyectos</p>
+                    <p class="indice-ruta">8 proyectos · 2023 → 2026</p>
                     <table>
                         <thead>
                             <tr>
-                                <th>Cuenta</th>
-                                <th>Resultado</th>
-                                <th>Diferencia</th>
+                                <th>Proyecto</th>
+                                <th>Área</th>
+                                <th>Stack</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Saldo General</td><td class="ok">coincide</td><td>0,00</td></tr>
-                            <tr><td>Caja</td><td class="ok">coincide</td><td>0,00</td></tr>
-                            <tr><td>Banco</td><td class="ok">coincide</td><td>0,00</td></tr>
-                            <tr><td>Patrimonio</td><td class="ok">coincide</td><td>0,00</td></tr>
+                            <tr><td>Sistema Darjam</td><td class="ok">Contabilidad</td><td>PHP · MySQL</td></tr>
+                            <tr><td>Anglotrax</td><td class="ok">Logística</td><td>.NET · SQL Server</td></tr>
+                            <tr><td>Seguridad vecinal</td><td class="ok">IA</td><td>FastAPI · PostgreSQL</td></tr>
+                            <tr><td>DSS Ferroviaria</td><td class="ok">Transporte</td><td>UML · SQL</td></tr>
+                            <tr><td>UniversidadIA</td><td class="ok">Educación</td><td>RAG · N8N</td></tr>
+                            <tr><td>Suite ERP</td><td class="ok">Comercio</td><td>ASP.NET · PHP</td></tr>
+                            <tr><td>Apps móviles</td><td class="ok">Visión</td><td>React Native</td></tr>
+                            <tr><td>Ing. de requisitos</td><td class="ok">Documentación</td><td>IEEE 1016</td></tr>
                         </tbody>
                     </table>
-                    <p class="conciliacion-nota">
-                        Pruebas PR-01 a PR-03 de la documentación técnica: los saldos del sistema
-                        contra el libro "DARJAM ANUAL" que reemplazó.
+                    <p class="indice-nota">
+                        Sistemas para clientes reales y proyectos académicos: contabilidad,
+                        logística, IA, ERP, móvil y documentación.
                     </p>
                 </div>
             </div>
@@ -103,74 +107,7 @@
     <section id="proyectos" class="proyectos">
         <div class="container">
             <div class="seccion-head">
-                <h2>Proyectos destacados</h2>
-                <p>Los dos primeros son los sistemas en los que más he trabajado este año.</p>
-            </div>
-
-            <div class="destacados">
-                <!-- Destacado 1 -->
-                <article class="destacado-card">
-                    <div class="destacado-body">
-                        <span class="etiqueta">Contabilidad · Gestión comercial</span>
-                        <h3>Sistema Darjam</h3>
-                        <p class="destacado-resumen">Sistema contable y de ventas para una perfumería de perfumes originales y decants (venta por mililitro).</p>
-                        <ul class="proyecto-features">
-                            <li>Reemplacé el libro de Excel "DARJAM ANUAL" por una aplicación web multiusuario, migrando todo el histórico y reproduciendo su lógica contable.</li>
-                            <li>Caja, Banco y Patrimonio se calculan en tiempo real desde 7 vistas SQL; ningún saldo se guarda precalculado, así no quedan desactualizados.</li>
-                            <li>Cubre ventas con pago combinado, compras por lotes, gastos, comisiones por vendedor, activos fijos, deudas, adelantos, sueldos y operaciones en USDT.</li>
-                            <li>Control de acceso por roles: el vendedor nunca ve costos, márgenes ni resultados globales. Tienda pública con disponibilidad indicativa, sin stock exacto.</li>
-                            <li>Catálogo de alta variación y respaldos automáticos en producción (mysqldump). Seguridad con bcrypt y consultas preparadas PDO.</li>
-                            <li>Documentación técnica de 27 páginas con requerimientos, diccionario de datos, matriz de permisos, plan de pruebas y 4 diagramas.</li>
-                        </ul>
-                        <div class="proyecto-tech">
-                            <span>PHP · MVC</span>
-                            <span>MySQL</span>
-                            <span>PDO</span>
-                            <span>Vistas SQL</span>
-                            <span>JavaScript</span>
-                            <span>Bootstrap</span>
-                        </div>
-                    </div>
-                    <aside class="destacado-metricas">
-                        <div class="metrica"><strong>23</strong><span>tablas en la base de datos</span></div>
-                        <div class="metrica"><strong>1.394</strong><span>ventas migradas y verificadas</span></div>
-                        <div class="metrica"><strong>506</strong><span>productos en catálogo</span></div>
-                        <div class="metrica"><strong>10/10</strong><span>casos de prueba aprobados</span></div>
-                        <a class="destacado-link" href="https://darjam.net" target="_blank" rel="noopener">darjam.net ↗</a>
-                    </aside>
-                </article>
-
-                <!-- Destacado 2 -->
-                <article class="destacado-card">
-                    <div class="destacado-body">
-                        <span class="etiqueta">Logística · Operaciones</span>
-                        <h3>Anglotrax</h3>
-                        <p class="destacado-resumen">Plataforma web de gestión logística, desplegada en producción en anglotrax.cloud.</p>
-                        <ul class="proyecto-features">
-                            <li>Módulo de tarja para registrar y controlar la carga en cada operación, con carga de archivos y evidencias desde el navegador.</li>
-                            <li>Despliegue y mantenimiento en servidor propio: configuración de producción, límites de subida, permisos de almacenamiento y lectura de logs para resolver errores 500.</li>
-                            <li>Junto a Plataforma Andina: refactorización de la base de datos desde un modelo de planificación estratégica (PEI/PDI) a un modelo dinámico de gestión presupuestaria.</li>
-                            <li>CRUDs con DTOs, reportes complejos y exportación a Excel para el área operativa.</li>
-                        </ul>
-                        <div class="proyecto-tech">
-                            <span>C# · .NET</span>
-                            <span>Blazor Server</span>
-                            <span>SQL Server</span>
-                            <span>EF Core</span>
-                            <span>Excel export</span>
-                        </div>
-                    </div>
-                    <aside class="destacado-metricas">
-                        <div class="metrica"><strong>Prod.</strong><span>en uso por la operación</span></div>
-                        <div class="metrica"><strong>Tarja</strong><span>control de carga con evidencias</span></div>
-                        <div class="metrica"><strong>PEI→PPTO</strong><span>refactor del modelo de datos</span></div>
-                        <a class="destacado-link" href="https://anglotrax.cloud" target="_blank" rel="noopener">anglotrax.cloud ↗</a>
-                    </aside>
-                </article>
-            </div>
-
-            <div class="seccion-head seccion-head-sub">
-                <h3>Más proyectos</h3>
+                <h2>Proyectos</h2>
                 <p>
                     Algunos son sistemas privados; visita mi
                     <a href="https://github.com/Angellec21" target="_blank" rel="noopener">perfil de GitHub</a>
@@ -180,45 +117,101 @@
 
             <div class="filtros">
                 <button class="filtro-btn activo" data-filtro="todos">Todos</button>
-                <button class="filtro-btn" data-filtro="ia">IA & Automatización</button>
                 <button class="filtro-btn" data-filtro="backend">Backend</button>
                 <button class="filtro-btn" data-filtro="bd">Bases de Datos</button>
+                <button class="filtro-btn" data-filtro="ia">IA & Automatización</button>
                 <button class="filtro-btn" data-filtro="mobile">Mobile</button>
                 <button class="filtro-btn" data-filtro="analisis">Análisis</button>
             </div>
 
             <div class="proyectos-grid">
                 <!-- Proyecto 1 -->
+                <div class="proyecto-card" data-categoria="backend,bd">
+                    <span class="etiqueta-mono">Contabilidad · Gestión comercial</span>
+                    <h3>Sistema Darjam</h3>
+                    <p>Sistema contable y de ventas para una perfumería de perfumes originales y decants (venta por mililitro).</p>
+                    <ul class="proyecto-features">
+                        <li>Reemplazó el libro de Excel "DARJAM ANUAL": 1.394 ventas migradas y saldos que coinciden al centavo.</li>
+                        <li>Caja, Banco y Patrimonio calculados en tiempo real desde 7 vistas SQL sobre 23 tablas.</li>
+                        <li>Roles con permisos, bcrypt, consultas preparadas PDO y respaldos automáticos.</li>
+                    </ul>
+                    <div class="proyecto-tech">
+                        <span>PHP · MVC</span>
+                        <span>MySQL</span>
+                        <span>PDO</span>
+                        <span>Vistas SQL</span>
+                        <span>Bootstrap</span>
+                    </div>
+                    <a class="proyecto-link" href="https://darjam.net" target="_blank" rel="noopener">darjam.net ↗</a>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="proyecto-card" data-categoria="backend,bd">
+                    <span class="etiqueta-mono">Logística · Operaciones</span>
+                    <h3>Anglotrax</h3>
+                    <p>Plataforma web de gestión logística, desplegada en producción en anglotrax.cloud.</p>
+                    <ul class="proyecto-features">
+                        <li>Módulo de tarja para registrar y controlar la carga, con archivos y evidencias desde el navegador.</li>
+                        <li>Despliegue y soporte en servidor propio: configuración, permisos y diagnóstico con logs.</li>
+                        <li>Con Plataforma Andina: refactor del modelo PEI/PDI a gestión presupuestaria y reportes a Excel.</li>
+                    </ul>
+                    <div class="proyecto-tech">
+                        <span>C# · .NET</span>
+                        <span>Blazor Server</span>
+                        <span>SQL Server</span>
+                        <span>EF Core</span>
+                    </div>
+                    <a class="proyecto-link" href="https://anglotrax.cloud" target="_blank" rel="noopener">anglotrax.cloud ↗</a>
+                </div>
+
+                <!-- Proyecto 3 -->
                 <div class="proyecto-card" data-categoria="ia,backend,bd">
                     <span class="etiqueta-mono">IA · Seguridad ciudadana</span>
                     <h3>Plataforma de seguridad vecinal</h3>
-                    <p>MVP para juntas vecinales: reporte de incidentes, mapa de zonas de riesgo, predicción con IA y alertas. Backend en FastAPI con modelos SQLAlchemy y triggers en PostgreSQL.</p>
+                    <p>MVP para juntas vecinales que anticipa el delito de forma colaborativa en Santa Cruz.</p>
+                    <ul class="proyecto-features">
+                        <li>Reporte de incidentes y mapa de zonas de riesgo.</li>
+                        <li>Predicción con IA y alertas para los vecinos.</li>
+                        <li>Backend en FastAPI con modelos SQLAlchemy y triggers en PostgreSQL.</li>
+                    </ul>
                     <div class="proyecto-tech">
                         <span>Python</span>
                         <span>FastAPI</span>
                         <span>PostgreSQL</span>
                         <span>scikit-learn</span>
                     </div>
+                    <a class="proyecto-link" href="https://github.com/Angellec21/santa-cruz-segura" target="_blank" rel="noopener">GitHub ↗</a>
                 </div>
 
-                <!-- Proyecto 2 -->
+                <!-- Proyecto 4 -->
                 <div class="proyecto-card" data-categoria="analisis,bd">
                     <span class="etiqueta-mono">Transporte · Análisis</span>
                     <h3>DSS Ferroviaria Oriental</h3>
-                    <p>Diagnóstico y diseño de un sistema de venta de pasajes y gestión de flota: modelo lógico de 22 tablas, 16 casos de uso, 38 historias de usuario, mapa de asientos y pagos por QR.</p>
+                    <p>Diagnóstico y diseño de un sistema de venta de pasajes y gestión de flota.</p>
+                    <ul class="proyecto-features">
+                        <li>Modelo lógico de 22 tablas.</li>
+                        <li>16 casos de uso y 38 historias de usuario.</li>
+                        <li>Mapa de asientos y pagos por QR.</li>
+                    </ul>
                     <div class="proyecto-tech">
                         <span>UML</span>
                         <span>SQL</span>
                         <span>Scrum</span>
                         <span>FODA</span>
                     </div>
+                    <a class="proyecto-link" href="https://github.com/Angellec21/sis321-ferroviaria-oriental-grupo2" target="_blank" rel="noopener">GitHub ↗</a>
                 </div>
 
-                <!-- Proyecto 3 -->
+                <!-- Proyecto 5 -->
                 <div class="proyecto-card" data-categoria="ia,backend">
                     <span class="etiqueta-mono">IA · Educación</span>
                     <h3>UniversidadIA</h3>
-                    <p>Chatbot universitario con arquitectura RAG para consultas sobre la malla curricular, conectado a WhatsApp Business mediante flujos en N8N.</p>
+                    <p>Chatbot universitario para consultas sobre la malla curricular.</p>
+                    <ul class="proyecto-features">
+                        <li>Arquitectura RAG sobre la malla curricular.</li>
+                        <li>Flujos conversacionales orquestados en N8N.</li>
+                        <li>Atención a estudiantes por WhatsApp Business.</li>
+                    </ul>
                     <div class="proyecto-tech">
                         <span>Python</span>
                         <span>FastAPI</span>
@@ -228,24 +221,35 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 4 -->
+                <!-- Proyecto 6 -->
                 <div class="proyecto-card" data-categoria="backend,bd">
                     <span class="etiqueta-mono">ERP · Comercio</span>
                     <h3>Suite ERP multi-negocio</h3>
-                    <p>Facturación e inventario para varios negocios (ElectroMax, Bike Store, Galileo) con módulos de clientes, ventas y compras.</p>
+                    <p>Facturación e inventario para varios negocios: ElectroMax, Bike Store y Galileo.</p>
+                    <ul class="proyecto-features">
+                        <li>Lógica central de facturación y control de inventario.</li>
+                        <li>Módulos de clientes, ventas, compras y categorías.</li>
+                        <li>Un mismo modelo adaptado a tres negocios distintos.</li>
+                    </ul>
                     <div class="proyecto-tech">
                         <span>ASP.NET Core</span>
                         <span>Blazor</span>
                         <span>PHP</span>
                         <span>MySQL</span>
                     </div>
+                    <a class="proyecto-link" href="https://github.com/Angellec21/ElectroMax" target="_blank" rel="noopener">GitHub · ElectroMax ↗</a>
                 </div>
 
-                <!-- Proyecto 5 -->
+                <!-- Proyecto 7 -->
                 <div class="proyecto-card" data-categoria="mobile,ia">
                     <span class="etiqueta-mono">Móvil · Visión</span>
                     <h3>Apps móviles y visión artificial</h3>
                     <p>Aplicaciones multiplataforma con reconocimiento facial y procesamiento de imágenes.</p>
+                    <ul class="proyecto-features">
+                        <li>Apps móviles con diseño adaptable y consumo de APIs REST.</li>
+                        <li>Reconocimiento facial con DeepFace.</li>
+                        <li>Procesamiento de imágenes con OpenCV.</li>
+                    </ul>
                     <div class="proyecto-tech">
                         <span>React Native</span>
                         <span>Expo</span>
@@ -254,11 +258,16 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 6 -->
+                <!-- Proyecto 8 -->
                 <div class="proyecto-card" data-categoria="analisis">
                     <span class="etiqueta-mono">Documentación</span>
                     <h3>Ingeniería de requisitos</h3>
-                    <p>Documentos IEEE 1016 y APA 7, matrices de trazabilidad, casos de uso y planes de prueba para proyectos académicos y de clientes.</p>
+                    <p>Documentación técnica para proyectos académicos y de clientes.</p>
+                    <ul class="proyecto-features">
+                        <li>Documentos IEEE 1016 y APA 7.</li>
+                        <li>Matrices de trazabilidad y casos de uso.</li>
+                        <li>Planes de prueba con criterios ISO 25010.</li>
+                    </ul>
                     <div class="proyecto-tech">
                         <span>IEEE 1016</span>
                         <span>UML</span>
@@ -381,6 +390,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

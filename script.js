@@ -145,7 +145,7 @@ const observador = new IntersectionObserver((entries) => {
 });
 
 // Aplicar observador a elementos, escalonando el retraso según su posición dentro de cada grupo
-const gruposAnimados = document.querySelectorAll('.destacados, .proyectos-grid, .herramientas-grid, .trayectoria-lista');
+const gruposAnimados = document.querySelectorAll('.proyectos-grid, .herramientas-grid, .trayectoria-lista');
 
 gruposAnimados.forEach(grupo => {
     Array.from(grupo.children).forEach((el, indice) => {
